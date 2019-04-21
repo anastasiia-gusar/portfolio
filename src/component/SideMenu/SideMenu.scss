@@ -1,0 +1,103 @@
+@import '../../variables';
+@import '../../mixins';
+
+$side-menu-width-desktop: 390px;
+$side-menu-width-mobile: 320px;
+$side-menu-width-mobile-collapsed: 96px;
+$side-menu-padding: 43px;
+
+.SideMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $side-menu-width-mobile-collapsed;
+  max-width: $side-menu-width-mobile;
+  transition: width 0.3s ease;
+
+  @include min-screen($desktop-media-size) {
+    width: $side-menu-width-desktop;
+    max-width: $side-menu-width-desktop;
+  }
+}
+
+.SideMenu__wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: $menu-background;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.SideMenu__content {
+  position: absolute;
+  left: $side-menu-width-mobile-collapsed;
+  top: 0;
+  bottom: 0;
+  width: $side-menu-width-mobile - $side-menu-padding;
+  transition: left 0.3s ease;
+
+  @include min-screen($desktop-media-size) {
+    width: $side-menu-width-desktop - $side-menu-padding;
+    left: $side-menu-padding;
+  }
+}
+
+.SideMenu__photo {
+  height: $side-menu-width-mobile - $side-menu-padding;
+  transition: clip-path 0.3s ease, width 0.3s ease, height 0.3s ease;
+  width: 100%;
+  background: $rouge;
+  background-image: url('../../assets/img/photo.jpg');
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 95px));
+
+  @include min-screen-height(900px) {
+    height: 523px;
+  }
+
+  @include max-screen-height(680px) {
+    height: 60px;
+  }
+}
+
+.SideMenu__text {
+  position: relative;
+  top: -44px;
+}
+
+.SideMenu__contacts {
+  @include not-serif-text();
+
+  color: rgba(238, 195, 195, 0.7);
+}
+
+.SideMenu__contact:last-of-type {
+  margin-top: 25px;
+}
+
+.SideMenu__contactLabel {
+  font-size: 12px;
+}
+
+.SideMenu__contactText {
+  position: relative;
+  font-size: 18px;
+  margin-top: 2px;
+  width: auto;
+  display: inline-block;
+}
+
+.SideMenu__contactIcon {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(30%, -50%);
+  opacity: 0.5;
+}
+
+.SideMenu__menu {
+  @include empty-list();
+}
