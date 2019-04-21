@@ -11,3 +11,13 @@
     padding-left: $side-menu-width-desktop;
   }
 }
+
+.Content__thanks {
+  @include serif-text();
+
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+  font-style: normal;
+  font-size: 24px;
+  color: $wine-berry;
+}

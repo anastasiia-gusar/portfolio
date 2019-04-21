@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
 
+import LinkButton from '../LinkButton';
 import { getViewportSize } from '../../utils/viewport';
 import t0 from '../../assets/media/t0.png';
 import t1 from '../../assets/media/t1.png';
@@ -10,9 +11,9 @@ import t4 from '../../assets/media/t4.png';
 import t5 from '../../assets/media/t5.png';
 import t6 from '../../assets/media/t6.png';
 
-import './ContentUI.scss';
+import './ContentGraphic.scss';
 
-class ContentUI extends Component {
+class ContentGraphic extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,11 +46,14 @@ class ContentUI extends Component {
 
   render() {
     const images = this.getImages();
-    console.log('images', images);
     return (
-      <div className="ContentUI">
-        <div className="ContentUI__header">Projects UI / UX</div>
-        <div className="ContentUI__slider">
+      <div className="ContentGraphic">
+        <div className="ContentGraphic__header">Graphic Art</div>
+        <p className="ContentGraphic__text">
+          <div className="ContentGraphic__textHeader">Работы в растровой и векторной графике для души :)</div>
+          Использовались: Adobe Photoshop, Illustrator.
+        </p>
+        <div className="ContentGraphic__slider">
           <ImageGallery
             showPlayButton={false}
             useBrowserFullscreen={false}
@@ -57,9 +61,16 @@ class ContentUI extends Component {
             items={images}
           />
         </div>
+        <div className="ContentGraphic__contact">
+          <LinkButton
+            className="ContentGraphic__contactButton"
+            text="ОТПРАВИТЬ ПИСЬМО"
+            href="#"
+          />
+        </div>
       </div>
     );
   }
 }
 
-export default ContentUI;
+export default ContentGraphic;
