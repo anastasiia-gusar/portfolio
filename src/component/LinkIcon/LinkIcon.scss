@@ -1,0 +1,9 @@
+.LinkIcon {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+
+  &:active {
+    opacity: 0.5;
+  }
+}

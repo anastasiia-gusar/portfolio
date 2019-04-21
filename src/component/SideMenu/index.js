@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
+import Link from '../Link';
+import LinkIcon from '../LinkIcon';
 import viberIcon from '../../assets/svg/viber.svg';
+import instagramIcon from '../../assets/svg/instagram.svg';
+import linkedinIcon from '../../assets/svg/linkedin.svg';
+import emailIcon from '../../assets/svg/email.svg';
 
 import './SideMenu.scss';
 
@@ -26,12 +31,54 @@ class SideMenu extends Component {
                   <div className="SideMenu__contactText">anastasiia.shpak1@gmail.com</div>
                 </div>
               </div>
-              <ul className="SideMenu__menu">
-                <li className="SideMenu__menuItem">About</li>
-                <li className="SideMenu__menuItem">UI | UX</li>
-                <li className="SideMenu__menuItem">Soft Skills</li>
-                <li className="SideMenu__menuItem">Graphic art</li>
+              <ul className="SideMenu__links">
+                <li className="SideMenu__linkContainer">
+                  <Link
+                    text="About"
+                    href="#"
+                    className="SideMenu__link"
+                  />
+                </li>
+                <li className="SideMenu__linkContainer">
+                  <Link
+                    text="UI | UX"
+                    href="#"
+                    className="SideMenu__link"
+                  />
+                </li>
+                <li className="SideMenu__linkContainer">
+                  <Link
+                    text="Soft Skills"
+                    href="#"
+                    className="SideMenu__link"
+                  />
+                </li>
+                <li className="SideMenu__linkContainer">
+                  <Link
+                    text="Graphic art"
+                    href="#"
+                    className="SideMenu__link"
+                  />
+                </li>
               </ul>
+            </div>
+            <div className="SideMenu__social">
+              <LinkIcon
+                icon={instagramIcon}
+                href="#"
+                className="SideMenu__socialItem"
+              />
+              <LinkIcon
+                icon={linkedinIcon}
+                href="#"
+                className="SideMenu__socialItem"
+              />
+              <div className="SideMenu__socialSpace" />
+              <LinkIcon
+                icon={emailIcon}
+                href="#"
+                className="SideMenu__socialItem"
+              />
             </div>
           </div>
         </div>

@@ -1,0 +1,12 @@
+.Link {
+  color: white;
+  text-decoration: none;
+
+  &:not(.Link--touch):hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
