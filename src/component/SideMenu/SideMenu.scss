@@ -12,6 +12,7 @@ $side-menu-small-photo-size: 60px;
   bottom: 0;
   width: $side-menu-width-mobile-collapsed;
   transition: width 0.3s ease;
+  z-index: 10000;
 
   &.SideMenu--expand {
     width: $side-menu-width-mobile;

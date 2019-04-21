@@ -3,13 +3,11 @@ import ImageGallery from 'react-image-gallery';
 
 import LinkButton from '../LinkButton';
 import { getViewportSize } from '../../utils/viewport';
-import t0 from '../../assets/media/t0.png';
-import t1 from '../../assets/media/t1.png';
-import t2 from '../../assets/media/t2.jpg';
-import t3 from '../../assets/media/t3.png';
-import t4 from '../../assets/media/t4.png';
-import t5 from '../../assets/media/t5.png';
-import t6 from '../../assets/media/t6.png';
+import t0 from '../../assets/media/d1.jpg';
+import t1 from '../../assets/media/d2.png';
+import t2 from '../../assets/media/d3.png';
+import t3 from '../../assets/media/d4.png';
+import t4 from '../../assets/media/d5.png';
 
 import './ContentGraphic.scss';
 
@@ -39,15 +37,13 @@ class ContentGraphic extends Component {
       { original: t2 },
       { original: t3 },
       { original: t4 },
-      { original: t5 },
-      { original: t6 },
     ];
   }
 
   render() {
     const images = this.getImages();
     return (
-      <div className="ContentGraphic">
+      <div className="ContentGraphic" id="graphic">
         <div className="ContentGraphic__header">Graphic Art</div>
         <p className="ContentGraphic__text">
           <div className="ContentGraphic__textHeader">Работы в растровой и векторной графике для души :)</div>
@@ -65,7 +61,7 @@ class ContentGraphic extends Component {
           <LinkButton
             className="ContentGraphic__contactButton"
             text="ОТПРАВИТЬ ПИСЬМО"
-            href="#"
+            href="mailto: anastasiia.shpak1@gmail.com"
           />
         </div>
       </div>

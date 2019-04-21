@@ -46,7 +46,7 @@ class ContentSoft extends Component {
   render() {
     const images = this.getImages();
     return (
-      <div className="ContentSoft">
+      <div className="ContentSoft" id="soft">
         <div className="ContentSoft__header">Soft Skills</div>
         <p className="ContentSoft__text">
           <div className="ContentSoft__textHeader">Верстка и дизайн цепочки писем</div>

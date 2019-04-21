@@ -26,8 +26,8 @@ class ContentAbout extends Component {
 
   render() {
     return (
-      <div className="ContentAbout" style={{ minHeight: this.state.height }}>
-        <h2 className="ContentAbout__header" id="about">Гусар Анастасия Сергеевна</h2>
+      <div className="ContentAbout" id="about" style={{ minHeight: this.state.height }}>
+        <h2 className="ContentAbout__header">Гусар Анастасия Сергеевна</h2>
         <p className="ContentAbout__text">Весь предыдущий опыт работы дал мне возможность определила для себя единное направления для развития - <strong>UI/UX Design.</strong></p>
         <p className="ContentAbout__text">На данный момент я усиленно развиваюсь в данном направлении и <strong>ищу свою команду мечты!</strong></p>
         <p className="ContentAbout__text--small">
@@ -69,7 +69,7 @@ class ContentAbout extends Component {
           <LinkButton
             className="ContentAbout__contactButton"
             text="ОТПРАВИТЬ ПИСЬМО"
-            href="#"
+            href="mailto: anastasiia.shpak1@gmail.com"
           />
         </div>
       </div>

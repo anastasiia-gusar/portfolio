@@ -45,9 +45,8 @@ class ContentUI extends Component {
 
   render() {
     const images = this.getImages();
-    console.log('images', images);
     return (
-      <div className="ContentUI">
+      <div className="ContentUI" id="ui">
         <div className="ContentUI__header">Projects UI / UX</div>
         <div className="ContentUI__slider">
           <ImageGallery

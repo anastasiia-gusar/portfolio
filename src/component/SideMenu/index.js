@@ -22,6 +22,10 @@ class SideMenu extends Component {
     this.setState({ isCollapsed: !this.state.isCollapsed });
   }
 
+  collapse = () => {
+    this.setState({ isCollapsed: true });
+  }
+
   render() {
     const { isCollapsed } = this.state;
     return (
@@ -61,28 +65,32 @@ class SideMenu extends Component {
                 <li className="SideMenu__linkContainer">
                   <Link
                     text="About"
-                    href="#"
+                    href="#about"
+                    onClick={this.collapse}
                     className="SideMenu__link"
                   />
                 </li>
                 <li className="SideMenu__linkContainer">
                   <Link
                     text="UI | UX"
-                    href="#"
+                    href="#ui"
+                    onClick={this.collapse}
                     className="SideMenu__link"
                   />
                 </li>
                 <li className="SideMenu__linkContainer">
                   <Link
                     text="Soft Skills"
-                    href="#"
+                    href="#soft"
+                    onClick={this.collapse}
                     className="SideMenu__link"
                   />
                 </li>
                 <li className="SideMenu__linkContainer">
                   <Link
                     text="Graphic art"
-                    href="#"
+                    href="#graphic"
+                    onClick={this.collapse}
                     className="SideMenu__link"
                   />
                 </li>
@@ -98,14 +106,13 @@ class SideMenu extends Component {
               <LinkIcon
                 icon={linkedinIcon}
                 target="_blank"
-                href="#"
+                href="https://www.linkedin.com/in/anastasiia-shpak-a12017137"
                 className="SideMenu__socialItem"
               />
               <div className="SideMenu__socialSpace" />
               <LinkIcon
                 icon={emailIcon}
-                target="_blank"
-                href="#"
+                href="mailto: anastasiia.shpak1@gmail.com"
                 className="SideMenu__socialItem"
               />
             </div>
