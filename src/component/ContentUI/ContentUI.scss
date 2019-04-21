@@ -1,0 +1,64 @@
+@import '../../../node_modules/react-image-gallery/styles/scss/image-gallery.scss';
+@import '../../variables';
+@import '../../mixins';
+
+.ContentUI {
+  padding: 50px;
+  overflow: hidden;
+
+  .image-gallery-fullscreen-button:hover::before,
+  .image-gallery-play-button:hover::before,
+  .image-gallery-left-nav:hover::before,
+  .image-gallery-right-nav:hover::before {
+    color: $tawny-port;
+  }
+
+  .image-gallery-fullscreen-button::before,
+  .image-gallery-play-button::before,
+  .image-gallery-left-nav::before,
+  .image-gallery-right-nav::before {
+    text-shadow: none;
+    color: $tawny-port;
+  }
+
+  .image-gallery-fullscreen-button:active::before,
+  .image-gallery-play-button:active::before,
+  .image-gallery-left-nav:active::before,
+  .image-gallery-right-nav:active::before {
+    opacity: 0.5;
+  }
+
+  .image-gallery-thumbnails-wrapper {
+    display: none;
+  }
+
+  .image-gallery-left-nav, .image-gallery-right-nav {
+    padding: 50px 10px;
+  }
+
+  .image-gallery-left-nav {
+    left: -50px;
+  }
+
+  .image-gallery-right-nav {
+    right: -50px;
+  }
+
+  .image-gallery-slide {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .image-gallery-swipe {
+    overflow: hidden;
+  }
+}
+
+.ContentUI__header {
+  @include serif-text();
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration-line: underline;
+  margin-bottom: 24px;
+  color: $wine-berry;
+}

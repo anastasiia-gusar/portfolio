@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ContentAbout from '../ContentAbout';
+import ContentUI from '../ContentUI';
 
 import './Content.scss';
 
@@ -9,6 +10,7 @@ class Content extends Component {
     return (
       <div className="Content">
         <ContentAbout />
+        <ContentUI />
       </div>
     );
   }
