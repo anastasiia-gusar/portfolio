@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cn from 'classnames';
 
 import Link from '../Link';
 import LinkIcon from '../LinkIcon';
@@ -10,10 +11,35 @@ import emailIcon from '../../assets/svg/email.svg';
 import './SideMenu.scss';
 
 class SideMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isCollapsed: true,
+    };
+  }
+
+  toggleCollapse = () => {
+    this.setState({ isCollapsed: !this.state.isCollapsed });
+  }
+
   render() {
+    const { isCollapsed } = this.state;
     return (
-      <div className="SideMenu">
+      <div className={cn('SideMenu', {
+        'SideMenu--collapsed': isCollapsed,
+        'SideMenu--expand': !isCollapsed,
+      })}>
         <div className="SideMenu__wrapper">
+          <div className="SideMenu__smallPhoto" />
+          <div className="SideMenu__stateControl">
+            <div
+              onClick={this.toggleCollapse}
+              className={cn('SideMenu__stateControlButton', {
+                'SideMenu__stateControlButton--expand': isCollapsed,
+                'SideMenu__stateControlButton--collapse': !isCollapsed,
+              })}
+            />
+          </div>
           <div className="SideMenu__content">
             <div className="SideMenu__photo" />
             <div className="SideMenu__text">
@@ -65,17 +91,20 @@ class SideMenu extends Component {
             <div className="SideMenu__social">
               <LinkIcon
                 icon={instagramIcon}
-                href="#"
+                target="_blank"
+                href="https://www.instagram.com/ana.shpak_design.workpage"
                 className="SideMenu__socialItem"
               />
               <LinkIcon
                 icon={linkedinIcon}
+                target="_blank"
                 href="#"
                 className="SideMenu__socialItem"
               />
               <div className="SideMenu__socialSpace" />
               <LinkIcon
                 icon={emailIcon}
+                target="_blank"
                 href="#"
                 className="SideMenu__socialItem"
               />

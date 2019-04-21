@@ -5,6 +5,7 @@ $side-menu-width-desktop: 390px;
 $side-menu-width-mobile: 320px;
 $side-menu-width-mobile-collapsed: 96px;
 $side-menu-padding: 43px;
+$side-menu-small-photo-size: 60px;
 
 .SideMenu {
   position: fixed;
@@ -12,12 +13,18 @@ $side-menu-padding: 43px;
   top: 0;
   bottom: 0;
   width: $side-menu-width-mobile-collapsed;
-  max-width: $side-menu-width-mobile;
   transition: width 0.3s ease;
+
+  &.SideMenu--expand {
+    width: $side-menu-width-mobile;
+  }
 
   @include min-screen($desktop-media-size) {
     width: $side-menu-width-desktop;
-    max-width: $side-menu-width-desktop;
+
+    &.SideMenu--expand {
+      width: $side-menu-width-desktop;
+    }
   }
 }
 
@@ -32,6 +39,70 @@ $side-menu-padding: 43px;
   overflow: hidden;
 }
 
+.SideMenu__smallPhoto {
+  position: absolute;
+  background: $rouge;
+  background-image: url('../../assets/img/photo-small.jpg');
+  background-size: contain;
+  background-position: center center;
+  width: $side-menu-small-photo-size;
+  height: $side-menu-small-photo-size;
+  border: 2px solid $white;
+  border-radius: 50%;
+  top: ($side-menu-width-mobile-collapsed - $side-menu-small-photo-size) / 2;
+  left: ($side-menu-width-mobile-collapsed - $side-menu-small-photo-size) / 2;
+  transition: left 0.3s ease;
+
+  .SideMenu--expand & {
+    left: -100%;
+  }
+
+  @include min-screen($desktop-media-size) {
+    left: -100%;
+  }
+}
+
+.SideMenu__stateControl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $side-menu-width-mobile-collapsed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease, width 0.3s ease;
+
+  .SideMenu--expand & {
+    width: $side-menu-padding;
+  }
+
+  @include min-screen($desktop-media-size) {
+    left: -100%;
+  }
+}
+
+.SideMenu__stateControlButton {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-size: contain;
+  background-position: center center;
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.SideMenu__stateControlButton--expand {
+  background-image: url('../../assets/svg/right.svg');
+}
+
+.SideMenu__stateControlButton--collapse {
+  background-image: url('../../assets/svg/left.svg');
+}
+
 .SideMenu__content {
   position: absolute;
   left: $side-menu-width-mobile-collapsed;
@@ -39,6 +110,10 @@ $side-menu-padding: 43px;
   bottom: 0;
   width: $side-menu-width-mobile - $side-menu-padding;
   transition: left 0.3s ease;
+
+  .SideMenu--expand & {
+    left: $side-menu-padding;
+  }
 
   @include min-screen($desktop-media-size) {
     width: $side-menu-width-desktop - $side-menu-padding;
@@ -48,8 +123,8 @@ $side-menu-padding: 43px;
 
 .SideMenu__photo {
   height: $side-menu-width-mobile - $side-menu-padding;
-  transition: clip-path 0.3s ease, width 0.3s ease, height 0.3s ease;
-  width: 100%;
+  transition: clip-path 0.3s ease, height 0.3s ease;
+  width: $side-menu-width-desktop - $side-menu-padding;
   background: $rouge;
   background-image: url('../../assets/img/photo.jpg');
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 95px));
