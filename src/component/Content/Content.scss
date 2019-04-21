@@ -1,0 +1,13 @@
+@import '../../variables';
+@import '../../mixins';
+
+.Content {
+  padding-left: $side-menu-width-mobile-collapsed;
+  transition: padding-left 0.3s ease;
+  background: $rose-white;
+  overflow-y: auto;
+
+  @include min-screen($desktop-media-size) {
+    padding-left: $side-menu-width-desktop;
+  }
+}

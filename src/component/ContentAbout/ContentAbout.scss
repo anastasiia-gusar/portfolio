@@ -1,0 +1,128 @@
+@import '../../variables';
+@import '../../mixins';
+
+.ContentAbout {
+  padding: 24px;
+  transition: padding 0.3s ease;
+
+  @include min-screen(1440px) {
+    padding: 24px 180px 24px 180px;
+  }
+}
+
+.ContentAbout__header {
+  @include serif-text();
+
+  font-size: 18px;
+  font-weight: 500;
+  color: $tawny-port;
+  padding-left: 40px;
+
+  @include min-screen($tablet-media-size) {
+    font-size: 24px;
+  }
+
+  @include min-screen($desktop-media-size) {
+    font-size: 36px;
+  }
+}
+
+.ContentAbout__text, .ContentAbout__text--small {
+  @include not-serif-text();
+
+  color: $tundora;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+}
+
+.ContentAbout__text--small {
+  font-size: 14px;
+}
+
+.ContentAbout__skills {
+  display: flex;
+  color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+
+  @include max-screen($tablet-media-size) {
+    flex-direction: column;
+  }
+}
+
+.ContentAbout__skillsLeft, .ContentAbout__skillsRight {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContentAbout__skillsHeader {
+  @include serif-text();
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: normal;
+  margin-bottom: 18px;
+  margin-top: 10px;
+}
+
+.ContentAbout__skillsLeft {
+  padding-right: 50px;
+  text-align: right;
+
+  .ContentAbout__skillsHeader {
+    padding-right: 30px;
+  }
+
+  @include max-screen($tablet-media-size) {
+    padding-left: 0;
+    text-align: left;
+
+    .ContentAbout__skillsHeader {
+      padding-left: 10px;
+    }
+  }
+}
+
+.ContentAbout__skillsRight {
+  padding-left: 50px;
+
+  .ContentAbout__skillsHeader {
+    padding-left: 30px;
+  }
+
+  @include max-screen($tablet-media-size) {
+    padding-left: 0;
+
+    .ContentAbout__skillsHeader {
+      padding-left: 10px;
+    }
+  }
+}
+
+.ContentAbout__skillsWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ContentAbout__skillsItem {
+  font-size: 18px;
+  padding: 6px 0;
+  line-height: 1.5;
+}
+
+.ContentAbout__contact {
+  position: relative;
+  margin-top: 40px;
+}
+
+.ContentAbout__contactButton {
+  position: relative;
+  margin-left: 50px;
+  left: 50%;
+}

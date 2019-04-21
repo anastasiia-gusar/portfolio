@@ -1,0 +1,13 @@
+.LinkButton {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 14px 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #60184A 2.6%, #541E4F 45.83%, #61174A 70.31%, #710E43 100%);
+  display: inline-block;
+
+  &:active {
+    opacity: 0.5;
+  }
+}

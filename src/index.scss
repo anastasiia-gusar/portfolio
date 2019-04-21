@@ -9,6 +9,19 @@ html, body, #root {
   box-sizing: border-box;
 }
 
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+  text-indent: -5px;
+}
+ul.dashed > li:before {
+  content: "-";
+  text-indent: -5px;
+  position: relative;
+  left: -5px;
+}
+
 body {
   margin: 0;
   padding: 0;
