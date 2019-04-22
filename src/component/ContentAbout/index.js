@@ -28,7 +28,7 @@ class ContentAbout extends Component {
     return (
       <div className="ContentAbout" id="about" style={{ minHeight: this.state.height }}>
         <h2 className="ContentAbout__header">Гусар Анастасия Сергеевна</h2>
-        <p className="ContentAbout__text">Весь предыдущий опыт работы дал мне возможность определила для себя единное направления для развития - <strong>UI/UX Design.</strong></p>
+        <p className="ContentAbout__text">Весь предыдущий опыт работы дал мне возможность определить для себя единное направления для развития - <strong>UI/UX Design.</strong></p>
         <p className="ContentAbout__text">На данный момент я усиленно развиваюсь в данном направлении и <strong>ищу свою команду мечты!</strong></p>
         <p className="ContentAbout__text--small">
           Имею опыт работы в создании маркетинговых материалов, что повышают понимание ценности продукта со стороны клиента и призывают к сотрудничеству, например:
